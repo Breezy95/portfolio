@@ -123,32 +123,6 @@ const ProjectDescription = styled.p`
   opacity: 0.9;
 `;
 
-const ProjectCanvasWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background: ${theme.colors.glass.card};
-
-  @media (min-width: ${theme.breakpoints.md}) {
-    height: 360px;
-  }
-
-  canvas {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40%;
-    background: linear-gradient(to top, ${theme.colors.glass.card}, transparent);
-  }
-`;
 
 const TechStack = styled.div`
   display: flex;

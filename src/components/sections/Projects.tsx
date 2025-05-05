@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { theme } from '../../styles/theme';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
+
 const ProjectsSection = styled.section`
   min-height: 100vh;
   display: flex;
@@ -70,16 +71,18 @@ const ProjectCard = styled(motion.div)`
   }
 `;
 
+
+
 const ProjectImage = styled.div<{ imageUrl: string }>`
   width: 100%;
-  height: 180px;
+  height: 100%;
   background-image: url(${props => props.imageUrl});
-  background-size: cover;
+  background-size: 90%;
   background-position: center;
   position: relative;
 
   @media (min-width: ${theme.breakpoints.md}) {
-    height: 220px;
+    height: 360px;
   }
 
   &::after {
@@ -118,6 +121,33 @@ const ProjectDescription = styled.p`
   line-height: 1.6;
   flex: 1;
   opacity: 0.9;
+`;
+
+const ProjectCanvasWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: ${theme.colors.glass.card};
+
+  @media (min-width: ${theme.breakpoints.md}) {
+    height: 360px;
+  }
+
+  canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, ${theme.colors.glass.card}, transparent);
+  }
 `;
 
 const TechStack = styled.div`
@@ -178,22 +208,42 @@ const ProjectLinks = styled.div`
 const projects = [
   {
     id: 1,
-    title: "Project One",
-    description: "A full-stack web application with real-time features and modern UI/UX design.",
-    image: "https://via.placeholder.com/400x200",
-    techStack: ["React", "Node.js", "MongoDB", "Socket.IO"],
-    githubUrl: "https://github.com",
+    title: "Flappy Bird (WIP)",
+    description: " A project among friends of varying experience to build a fun take on flappy bird",
+    image: "https://placehold.co/600x400",
+    techStack: ["godot", "python", "graphite"],
+    githubUrl: "https://github.com/EthanCampana/nwft-flappy/branches",
     liveUrl: "https://example.com",
   },
   {
     id: 2,
-    title: "Project Two",
+    title: "Job Application Classifier (WIP)",
     description: "Mobile-first e-commerce platform with seamless payment integration.",
-    image: "https://via.placeholder.com/400x200",
-    techStack: ["Next.js", "TypeScript", "Stripe", "Tailwind"],
+    image: "hhttps://placehold.co/600x400",
+    techStack: ["scikit-learn", "Python", "Tailwind"],
     githubUrl: "https://github.com",
     liveUrl: "https://example.com",
   },
+  {
+    id: 3,
+    title: "UPNP TV Server (deprec.)",
+    description: "A upnp control point/ using multiple libraries to create an analogue to Airplay",
+    image: "hhttps://placehold.co/600x400",
+    techStack: ["C/C++", "OAT++", "PUPnP", "ffmpeg", "GUPnP", "Upnp/DLNA"],
+    githubUrl: "https://github.com/Breezy95/upnptvserver",
+    liveUrl: "https://example.com",
+
+  },
+  {
+    id: 4,
+    title: "WASM render # 1",
+    description: "A magical cube, there is an otherwordly quality to it... somehow",
+    image: "./cube.png",
+    techStack: ["WGPU", "Rust", "javascript", "Typescript", "Webassembly"],
+    githubUrl: "https://github.com/Breezy95/upnptvserver",
+    liveUrl: "https://example.com",
+
+  }
 ];
 
 const Projects = () => {
@@ -245,11 +295,12 @@ const Projects = () => {
               role="listitem"
               aria-labelledby={`project-title-${project.id}`}
             >
+          
               <ProjectImage 
                 imageUrl={project.image} 
                 role="img" 
                 aria-label={`Screenshot of ${project.title}`} 
-              />
+              /> 
               <ProjectContent>
                 <ProjectTitle id={`project-title-${project.id}`}>{project.title}</ProjectTitle>
                 <ProjectDescription>{project.description}</ProjectDescription>
@@ -268,15 +319,18 @@ const Projects = () => {
                     <FaGithub aria-hidden="true" />
                     <span className="sr-only">GitHub repository</span>
                   </a>
+                  
                   <a 
                     href={project.liveUrl} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     aria-label={`Visit ${project.title} live site`}
                   >
+                    
                     <FaExternalLinkAlt aria-hidden="true" />
                     <span className="sr-only">Live site</span>
                   </a>
+                  
                 </ProjectLinks>
               </ProjectContent>
             </ProjectCard>

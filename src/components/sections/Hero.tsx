@@ -82,6 +82,7 @@ const Description = styled.p`
   font-size: clamp(1rem, 1.2vw, 1.2rem);
   max-width: 600px;
   margin-bottom: ${theme.spacing.xl};
+  margin-left: 17%;
   opacity: 0.8;
   line-height: 1.7;
 `;
@@ -125,20 +126,21 @@ export const Hero = () => {
     <HeroSection id="hero" role="region" aria-label="Introduction">
       <div className="container">
         <HeroContent>
-          <div>
-            <Title role="heading" aria-level={2}>
-              Hi, I'm [Your Name]
+          <img className='circular-image-container' src='profile.jpg'></img>
+          <div>  
+            <Title role="heading" aria-level={2}>      
+              Hi, I'm Fabrice!
             </Title>
+            
             <Subtitle role="heading" aria-level={3}>
-              Full Stack Developer
+              Software Engineer
             </Subtitle>
             <Description role="paragraph">
-              I create elegant solutions to complex problems, specializing in modern web development
-              with a focus on user experience and clean code.
+              I am an early career professional who had recently worn many hats, now I am looking for interesting opportunities at interesting companies!
             </Description>
             <SocialLinks role="list" aria-label="Social media links">
               <a 
-                href="https://github.com" 
+                href="https://github.com/Breezy95" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Visit my GitHub profile"
@@ -150,7 +152,7 @@ export const Hero = () => {
                 <span className="sr-only">GitHub</span>
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://linkedin.com/fabrice-benoit-b12737106/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Visit my LinkedIn profile"
@@ -162,7 +164,7 @@ export const Hero = () => {
                 <span className="sr-only">LinkedIn</span>
               </a>
               <a 
-                href="mailto:your.email@example.com"
+                href="mailto:fbenoit151@gmail.com"
                 aria-label="Send me an email"
                 role="listitem"
               >

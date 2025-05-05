@@ -15,7 +15,11 @@ import {
   SiPython,
   SiMongodb,
   SiPostgresql,
-  SiRedux
+  SiRedux,
+  SiFlask,
+  SiMysql,
+  SiApachekafka,
+  SiD3Dotjs
 } from 'react-icons/si';
 
 const SkillsSection = styled.section`
@@ -160,6 +164,7 @@ const skillCategories = [
       { name: 'TypeScript', icon: <SiTypescript /> },
       { name: 'JavaScript', icon: <SiJavascript /> },
       { name: 'Redux', icon: <SiRedux /> },
+      { name: 'd3.js', icon: <SiD3Dotjs/>}
     ],
   },
   {
@@ -169,7 +174,13 @@ const skillCategories = [
       { name: 'Node.js', icon: <FaNodeJs /> },
       { name: 'Python', icon: <SiPython /> },
       { name: 'MongoDB', icon: <SiMongodb /> },
+      { name: 'Flask', icon: <SiFlask /> },
+      { name: 'MySql', icon: <SiMysql /> },
       { name: 'PostgreSQL', icon: <SiPostgresql /> },
+      { name: 'Golang', icon: <SiMongodb /> },
+      { name: 'Rust', icon: <SiMongodb /> },
+      { name: 'C/C++', icon: <SiMongodb /> },
+      {name: 'Kafka', icon: <SiApachekafka/>}
     ],
   },
   {

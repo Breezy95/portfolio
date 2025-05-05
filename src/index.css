@@ -13,6 +13,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.circular-image-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #000;
+    position: relative;
+    float: left;
+    margin-right: 5%;
+}
+
+
 a {
   font-weight: 500;
   color: #646cff;
